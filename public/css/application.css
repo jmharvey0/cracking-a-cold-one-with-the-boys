@@ -1,0 +1,58 @@
+
+.content{
+  margin-top: 150px;
+  margin-left: 100px;
+}
+.error{
+  color: red;
+}
+
+.nav-bar{
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    height: 100px;
+}
+
+.nav-bar-title {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0px 40px 0px;
+    text-decoration: none;
+    font-size: 4em;
+    margin-top: 12px;
+}
+
+.nav-bar-links {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 41px 100px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.nav-bar-link {
+  color: white;
+}
+
+
+.logout {
+  background: none;
+  border: none;
+  display: inline;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  outline-offset: 0;
+}
+
+.logout-button {
+  border-bottom: 2px solid white;
+  font-size: 0.9em;
+}

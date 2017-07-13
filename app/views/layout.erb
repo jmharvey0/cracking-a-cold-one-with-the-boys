@@ -18,6 +18,25 @@
   <title>CCWB.com - Come Crack a Cold One!</title>
 </head>
 <body>
+  <nav class="nav-bar">
+    <p class="nav-bar-title">CCWB.com</p>
+    <div class="nav-bar-links">
+      <% if logged_in? %>
+      <a class="nav-bar-link" href="/users/<%=current_user.id%>"><%=current_user.username%></a>
+      <form class="nav-bar-link logout" action="/sessions" method="post"><input type="hidden" name="_method" value="delete"><input class="logout logout-button" type="submit" value="logout"></form>
+      <% else %>
+      <a class="nav-bar-link" href="/sessions/new">login</a>
+      <a class="nav-bar-link" href="/users/new">register</a>
+      <% end %>
+      <a class="nav-bar-link" href="/">home</a>
+    </div>
+  </nav>
+
+  <section class="content">
+  <% if @errors %>
+    <%= erb :'_errors', layout: false, locals: {errors: @errors} %>
+  <% end %>
   <%= yield %>
+  </section>
 </body>
 </html>
