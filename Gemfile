@@ -16,7 +16,7 @@ gem 'shotgun', '~>0.9.1'
 gem 'bcrypt'
 
 gem 'httparty'
-gem 'dotenv'
+
 
 group :test do
   gem 'shoulda-matchers'
@@ -26,6 +26,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'dotenv'
   gem 'factory_girl'
   gem 'faker'
 end
