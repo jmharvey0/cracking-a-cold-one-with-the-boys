@@ -1,4 +1,5 @@
 get '/categories' do
+  # @categories = BreweryDBAdapter.categories
   @categories = Category.all
   erb :"categories/index"
 end
