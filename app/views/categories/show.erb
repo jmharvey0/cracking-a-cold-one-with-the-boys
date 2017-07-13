@@ -1,0 +1,9 @@
+<h1><%=@category.name%></h1>
+<ul>
+<%@category.styles.each do |style|%>
+  <li><a href="/styles/<%=style.id%>"><%=style.name%></a>
+  <p><%=style.description%></p>
+  </li>
+<% end %>
+</ul>
+<a href="/categories">back</a>
