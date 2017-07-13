@@ -5,4 +5,8 @@ class BreweryDBAdapter
   def initialize(service, page)
     @options = { query: { site: service, page: page }}
   end
+
+  def categories
+    self.class.get("/categories", @options)
+  end
 end
