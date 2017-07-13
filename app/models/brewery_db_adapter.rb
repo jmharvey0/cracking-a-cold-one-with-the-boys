@@ -1,9 +1,9 @@
 class BreweryDBAdapter
-  inclue HTTParty
-  base_uri 'api.brewerydb.com/v2'
+  include HTTParty
+  base_uri "api.brewerydb.com/v2/"
 
-  def initialize(service, page)
-    @options = { query: { site: service, page: page }}
+  def initialize(key)
+    @options = { query: { key: key }}
   end
 
   def categories
