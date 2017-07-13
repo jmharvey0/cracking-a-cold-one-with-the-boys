@@ -1,6 +1,11 @@
+before do
+  require_relative '../models/brewery_db_adapter'
+end
 get '/categories' do
-  @categories = BreweryDBAdapter.categories
-  # @categories = Category.all
+  p ENV['BREWERY_DB_ACCESS_TOKEN']
+  p brewery_db_categories = BreweryDBAdapter.new(ENV['BREWERY_DB_ACCESS_TOKEN'])
+  # @categories =
+  @categories = Category.all
   erb :"categories/index"
 end
 
