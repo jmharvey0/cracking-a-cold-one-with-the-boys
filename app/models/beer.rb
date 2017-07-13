@@ -1,3 +1,4 @@
 class Beer < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :style
+  has_one :category, through: :style
 end
