@@ -1,1 +1,6 @@
-<%= @beer.name%>  <%= @beer.style.name %>
+<h1><%= @beer.name%></h1>
+<h2>Style:</h2>
+<p><a href="/styles/<%= @beer.style.id %>"><%= @beer.style.name %></a></p>
+<h2>Description:</h2>
+<p><%= @beer.description %></p>
+<form action="/beers/"></form>
