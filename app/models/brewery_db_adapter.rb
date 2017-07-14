@@ -2,8 +2,8 @@ class BreweryDBAdapter
   include HTTParty
   base_uri "api.brewerydb.com/v2/"
 
-  def initialize(key)
-    @options = { query: { key: key }}
+  def initialize()
+    @options = { query: { key: ENV['BREWERY_DB_ACCESS_TOKEN'] }}
   end
 
   def categories

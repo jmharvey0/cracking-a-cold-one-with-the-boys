@@ -19,9 +19,12 @@
 # Style.create(name: "Red", description: "Red ales can either be red or light brown in colour. They are moderate to heavy in flavour and contain hints of caramel that is offset by the predominant hop characteristic of the beer.", category: ale)
 # Style.create(name: "Strong", description: "This is a broad grouping that can describe any beer over 7\% ABV. Strong beers are typically dark in colour, some are almost black. Different styles can include old ales, double IPAs, and barleywines.", category: stout)
 # Style.create(name: "Wheat", description: "Light and easy to drink with very little aftertaste. Wheat provides a soft character to beer and is sometimes hazy or cloudy with a touch of spice notes.", category: stout)
+
+# brewery_db.beers({ query: { key: ENV['BREWERY_DB_ACCESS_TOKEN'], styleId: 1, since: 157700000
+
 require_relative '../app/models/brewery_db_adapter'
 
-brewery_db = BreweryDBAdapter.new(ENV['BREWERY_DB_ACCESS_TOKEN'])
+p brewery_db = BreweryDBAdapter.new()
 
 brewery_db.categories
 brewery_db.styles
