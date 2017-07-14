@@ -1,7 +1,7 @@
 <h1><%=@style.name%></h1>
 <ul>
 <%@beers.each do |beer|%>
-  <li><a href="/beers/<%=beer.id%>"><%= beer.name %></a>
+  <li><a href="/beers/<%=beer.database_id%>"><%= beer.name %></a>
   <p>ABV: <%=beer.abv%>%</p>
   </li>
 <% end %>
