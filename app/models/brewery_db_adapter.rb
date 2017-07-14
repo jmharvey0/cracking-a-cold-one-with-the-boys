@@ -2,11 +2,23 @@ class BreweryDBAdapter
   include HTTParty
   base_uri "api.brewerydb.com/v2/"
 
-  def initialize(key)
-    @options = { query: { key: key }}
+  def initialize()
+    @options = { query: { key: ENV['BREWERY_DB_ACCESS_TOKEN'] }}
   end
 
   def categories
-    self.class.get("/categories", @options)
+    self.class.get("/categories", @options)['data'].map{|args| Category.create(name: args['name'])}
+  end
+  # unused method, change of plans
+  def category_find(finder)
+    response = self.class.get("/category/#{finder}", @options)['data']
+    Category.new(id: response['id'], name: response['name'])
+  end
+
+  def styles
+    self.class.get("/styles", @options)['data'].map{|args| Style.create(name: args['name'], description: args['description'], category_id: args['categoryId'])}
+  end
+  def beers(params = {})
+    self.class.get("/beers", params )['data'].map { |args| Beer.new(name: args['name'], abv: args['abv'], style_id: args['styleId']) }
   end
 end
