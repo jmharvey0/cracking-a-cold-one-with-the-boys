@@ -15,7 +15,7 @@ require 'pg'
 require 'active_record'
 require 'logger'
 require 'bcrypt'
-require 'dotenv'
+require 'dotenv' if development?
 require 'httparty'
 
 require 'sinatra'
