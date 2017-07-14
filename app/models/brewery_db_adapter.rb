@@ -7,10 +7,18 @@ class BreweryDBAdapter
   end
 
   def categories
-    self.class.get("/categories", @options)['data'].map{|args| Category.new(id: args['id'], name: args['name'])}
+    self.class.get("/categories", @options)['data'].map{|args| Category.create(name: args['name'])}
   end
+  # unused method, change of plans
   def category_find(finder)
     response = self.class.get("/category/#{finder}", @options)['data']
     Category.new(id: response['id'], name: response['name'])
+  end
+
+  def styles
+    self.class.get("/styles", @options)['data'].map{|args| Style.create(name: args['name'], description: args['description'], category_id: args['categoryId'])}
+  end
+  def beers(params = {})
+    self.class.get("/beers", params )['data'].map { |args| Beer.new(name: args['name'], abv: args['abv'], style_id: args['styleId']) }
   end
 end
