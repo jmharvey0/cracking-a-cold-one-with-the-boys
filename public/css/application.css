@@ -1,7 +1,9 @@
 
 .content{
   margin-top: 150px;
-  margin-left: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  max-width: 1138px;
 }
 .error{
   color: red;

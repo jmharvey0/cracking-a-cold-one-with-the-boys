@@ -1,4 +1,8 @@
 <h1><%=@style.name%></h1>
+<p>Here's a random selection of <%= @style.name %> beers. If you don't like what you see click the button below!</p>
+<form action="/styles/<%= @style.id %>">
+  <button type="submit">Fetch me another!</button>
+</form>
 <ul>
 <%@beers.each do |beer|%>
   <li><a href="/beers/<%=beer.database_id%>"><%= beer.name %></a>
