@@ -24,7 +24,7 @@
 
 require_relative '../app/models/brewery_db_adapter'
 
-p brewery_db = BreweryDBAdapter.new()
+brewery_db = BreweryDBAdapter.new()
 
 brewery_db.categories
 brewery_db.styles
