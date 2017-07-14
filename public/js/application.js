@@ -4,4 +4,15 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $("#login-link").on('click', function(event) {
+    event.preventDefault();
+    var $this = $(this);
+    var url = $this.attr("href");
+    $.ajax({
+      url: url
+    })
+    .done(function(response){
+      $(".content").prepend(response);
+    })
+  });
 });

@@ -25,7 +25,7 @@
       <a class="nav-bar-link" href="/users/<%=current_user.id%>"><%=current_user.username%></a>
       <form class="nav-bar-link logout" action="/sessions" method="post"><input type="hidden" name="_method" value="delete"><input class="logout logout-button" type="submit" value="logout"></form>
       <% else %>
-      <a class="nav-bar-link" href="/sessions/new">login</a>
+      <a id="login-link"class="nav-bar-link" href="/sessions/new">login</a>
       <a class="nav-bar-link" href="/users/new">register</a>
       <% end %>
       <a class="nav-bar-link" href="/">home</a>
