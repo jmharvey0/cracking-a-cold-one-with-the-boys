@@ -1,1 +1,8 @@
-index.erb
+<h1>All Styles</h1>
+<ul>
+<%@styles.each do |style|%>
+  <li><a href="/styles/<%=style.id%>"><%=style.name%></a>
+  <p><%=style.description%></p>
+  </li>
+<% end %>
+</ul>
