@@ -21,4 +21,8 @@ class BreweryDBAdapter
   def beers(styleId)
     self.class.get("/beers", { query: { key: ENV['BREWERY_DB_ACCESS_TOKEN'], styleId: styleId, order: "random", randomCount: 10 }} )['data'].map { |args| Beer.new(database_id: args['id'], name: args['name'], abv: args['abv'], style_id: args['styleId']) }
   end
+  def find_beer_by_id(database_id)
+    beer_data = self.class.get("/beer/#{database_id}", @options)['data']
+    Beer.new(database_id: beer_data['id'], name: beer_data['name'], abv: beer_data['abv'], style_id: beer_data['styleId'])
+  end
 end
